@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Strago · Ruta de bares y tapas</title>
+  <meta name="description" content="Strago: graba tu ruta de bares y tapas con GPS, apunta lo que tomas y descubre kilómetros, calorías y tu tasa de alcohol estimada. Una app de DV Game Lab.">
+  <link rel="icon" href="icon.png">
+  <style>
+    :root { --bg:#FFFFFF; --text:#1F1A17; --muted:#5E5550; --brand:#FC4C02; --line:#EEE6E1; --soft:#FFF7F2; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#14110F; --text:#F6F2EF; --muted:#B9AFA9; --line:#3A322D; --soft:#1F1A17; } }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+    .hero { background:var(--brand); color:#fff; padding:48px 16px 56px; }
+    .wrap { width:min(860px,100%); margin:0 auto; }
+    .hero img { width:88px; height:88px; border-radius:20px; display:block; margin-bottom:18px; }
+    .logo { font:italic 800 clamp(48px,11vw,76px)/1 system-ui,sans-serif; letter-spacing:-1px; margin:0; }
+    .hero p { font-size:1.2rem; max-width:34em; margin:.6em 0 1.4em; }
+    .btn { display:inline-block; background:#fff; color:#D63F00; font-weight:800; padding:14px 22px; border-radius:999px; text-decoration:none; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; padding:36px 16px; }
+    .grid div { background:var(--soft); border:1px solid var(--line); border-radius:16px; padding:18px; }
+    .grid h2 { margin:0 0 6px; font-size:1.1rem; }
+    .grid p { margin:0; color:var(--muted); font-size:.97rem; }
+    .fine { padding:0 16px 40px; color:var(--muted); font-size:.95rem; }
+    a { color:inherit; }
+  </style>
+</head>
+<body>
+  <section class="hero"><div class="wrap">
+    <img src="icon.png" alt="Icono de Strago">
+    <h1 class="logo">Strago</h1>
+    <p>Graba tu ruta de bares y tapas con GPS, apunta lo que tomas en cada sitio y descubre la verdad: kilómetros, calorías y tu tasa de alcohol estimada.</p>
+    <a class="btn" href="https://play.google.com/store/apps/details?id=com.dvgamelab.strago">Descárgala en Google Play</a>
+  </div></section>
+  <section class="grid wrap">
+    <div><h2>Tu ruta en el mapa</h2><p>Los 3 bares más cercanos para elegir, paradas automáticas y cuántas consumiciones hubo en cada sitio.</p></div>
+    <div><h2>Con cabeza</h2><p>Tasa estimada con tu peso y lo que has comido, límite personal, recordatorio de agua y botón «Vuelvo a casa».</p></div>
+    <div><h2>Con tu gente</h2><p>Amigos, chinchines, comentarios, fotos, salidas en grupo y una liga que premia andar y pedir agua.</p></div>
+  </section>
+  <p class="fine wrap">Solo para mayores de 18 años. Strago no es un alcoholímetro: si has bebido, no conduzcas.<br>
+  <a href="privacy-policy/">Política de privacidad</a> · <a href="delete-account/">Borrar mi cuenta</a> ·
+  <a href="mailto:dvgamelab@gmail.com">dvgamelab@gmail.com</a> · Una app de DV Game Lab</p>
+</body>
+</html>

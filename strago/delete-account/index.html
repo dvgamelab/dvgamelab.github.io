@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Borrar tu cuenta · Strago</title>
+  <meta name="description" content="Cómo borrar tu cuenta de Strago y todos sus datos.">
+  <style>
+    :root { --bg:#F6F2EF; --card:#FFFFFF; --text:#1F1A17; --muted:#5E5550; --accent:#D63F00; --brand:#FC4C02; --line:#EEE6E1; --soft:#FFF7F2; --crit:#C0262D; --good:#1F8A4C; --field:#FFFFFF; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#14110F; --card:#1F1A17; --text:#F6F2EF; --muted:#B9AFA9; --accent:#FF7A3D; --line:#3A322D; --soft:#2A221D; --crit:#FF6B6B; --good:#4CC784; --field:#14110F; }
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+    .bar { background:var(--brand); color:#fff; padding:18px 16px; }
+    .bar div { width:min(720px,100%); margin:0 auto; font:italic 800 30px/1 system-ui,sans-serif; letter-spacing:-.5px; }
+    main { width:min(720px,calc(100% - 32px)); margin:28px auto 40px; padding:clamp(22px,5vw,48px); background:var(--card); border:1px solid var(--line); border-radius:20px; }
+    h1 { margin:0 0 8px; font-size:clamp(1.8rem,6vw,2.6rem); line-height:1.08; }
+    h2 { margin-top:1.9em; padding-top:.5em; border-top:1px solid var(--line); font-size:1.22rem; }
+    a { color:var(--accent); }
+    .eyebrow { color:var(--accent); font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin:0; font-size:.85rem; }
+    .note { padding:14px 16px; background:var(--soft); border-left:4px solid var(--brand); border-radius:8px; }
+    li { margin:.4em 0; }
+    form { display:grid; gap:12px; margin-top:12px; }
+    label { font-weight:700; font-size:.9rem; color:var(--muted); display:grid; gap:6px; }
+    input { font:inherit; padding:12px 14px; border:1.5px solid var(--line); border-radius:10px; background:var(--field); color:var(--text); }
+    input:focus-visible, button:focus-visible { outline:3px solid var(--brand); outline-offset:2px; }
+    button { font:inherit; font-weight:800; padding:14px; border:0; border-radius:999px; cursor:pointer; color:#fff; background:var(--crit); }
+    button[disabled] { opacity:.5; cursor:wait; }
+    .check { display:flex; gap:10px; align-items:flex-start; font-weight:500; color:var(--text); }
+    .check input { margin-top:5px; width:18px; height:18px; }
+    .msg { padding:12px 14px; border-radius:10px; font-weight:600; }
+    .msg.err { background:color-mix(in srgb, var(--crit) 12%, transparent); color:var(--crit); }
+    .msg.ok { background:color-mix(in srgb, var(--good) 14%, transparent); color:var(--good); }
+    footer { margin-top:3rem; color:var(--muted); font-size:.94rem; }
+  </style>
+</head>
+<body>
+<div class="bar"><div>Strago</div></div>
+<main>
+  <p class="eyebrow">DV Game Lab</p>
+  <h1>Borrar tu cuenta de Strago</h1>
+
+  <p>Al borrar tu cuenta eliminamos <strong>de inmediato y para siempre</strong>:</p>
+  <ul>
+    <li>tu perfil (nombre y correo) y tu contraseña;</li>
+    <li>tus rutas compartidas y la copia de seguridad de todas tus rutas;</li>
+    <li>tus datos físicos y ajustes guardados en la cuenta;</li>
+    <li>tus fotos;</li>
+    <li>tus amistades, chinchines, comentarios, notificaciones y bloqueos.</li>
+  </ul>
+  <p class="note">Las rutas que tengas <strong>solo en tu móvil</strong> no se tocan: puedes borrarlas desde la
+  app, en Tú → «Borrar todas mis rutas», o desinstalando la app. Las copias técnicas del proveedor se
+  sobrescriben de forma periódica.</p>
+
+  <h2>Opción 1: desde la app</h2>
+  <p>Abre Strago y ve a <strong>Tú → Borrar mi cuenta</strong>. Te pediremos que escribas BORRAR para confirmar.</p>
+
+  <h2>Opción 2: aquí mismo</h2>
+  <p>Entra con el correo y la contraseña de tu cuenta de Strago.</p>
+  <form id="f" autocomplete="on">
+    <label>Correo<input id="mail" type="email" required autocomplete="email"></label>
+    <label>Contraseña<input id="pass" type="password" required autocomplete="current-password"></label>
+    <label class="check"><input id="sure" type="checkbox" required> <span>Entiendo que se borrarán mi cuenta y todos sus datos, y que no se puede deshacer.</span></label>
+    <div id="msg" class="msg" role="status" hidden></div>
+    <button id="go" type="submit">Borrar mi cuenta para siempre</button>
+  </form>
+
+  <h2>Opción 3: por correo</h2>
+  <p>Si no recuerdas la contraseña, escribe a <a href="mailto:dvgamelab@gmail.com?subject=Borrar%20mi%20cuenta%20de%20Strago">dvgamelab@gmail.com</a>
+  <strong>desde el correo de tu cuenta</strong>, con el asunto «Borrar mi cuenta de Strago». La borraremos en un
+  plazo máximo de 30 días y te lo confirmaremos.</p>
+
+  <footer>
+    <p>Strago · DV Game Lab · <a href="../privacy-policy/">Política de privacidad</a> ·
+    <a href="mailto:dvgamelab@gmail.com">dvgamelab@gmail.com</a></p>
+  </footer>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.1/dist/umd/supabase.js" integrity="sha384-K1nraABOP/zFehpLIUksXebbs7jMpB8gYMlb+uhVKZcWT/9Vkq1+qhv6ndC+1Yuz" crossorigin="anonymous"></script>
+<script>
+  // Mismo proyecto que la app. La clave «anon» es pública por diseño: los permisos
+  // los imponen las reglas del servidor, que solo dejan borrar tu propia cuenta.
+  const sb = window.supabase.createClient('https://qtqqywilbgoyjguktygl.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF0cXF5d2lsYmdveWpndWt0eWdsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAxODEyMzMsImV4cCI6MjEwNTc1NzIzM30.I6dkBPM10D-Vgo5OQXVZJfa4aaG5RfKBwB9sPdt3KHU', { auth: { persistSession: false } });
+  const $ = id => document.getElementById(id);
+  const show = (text, ok) => { const m = $('msg'); m.hidden = false; m.className = 'msg ' + (ok ? 'ok' : 'err'); m.textContent = text; };
+  const why = e => {
+    const t = String(e?.message || e).toLowerCase();
+    if (t.includes('invalid login')) return 'Correo o contraseña incorrectos. Si no recuerdas la contraseña, usa la opción 3.';
+    if (t.includes('rate limit')) return 'Demasiados intentos seguidos. Espera un minuto.';
+    if (t.includes('fetch') || t.includes('network')) return 'Sin conexión con el servidor. Inténtalo de nuevo.';
+    return 'No se pudo borrar la cuenta: ' + (e?.message || e) + '. Escríbenos y lo hacemos nosotros.';
+  };
+  $('f').addEventListener('submit', async ev => {
+    ev.preventDefault();
+    $('go').disabled = true; show('Borrando…', true);
+    try {
+      const { data, error } = await sb.auth.signInWithPassword({ email: $('mail').value.trim(), password: $('pass').value });
+      if (error) throw error;
+      const uid = data.user.id, bucket = sb.storage.from('route-photos');
+      const { data: folders } = await bucket.list(uid, { limit: 1000 });
+      for (const f of folders || []) {
+        const { data: files } = await bucket.list(uid + '/' + f.name, { limit: 1000 });
+        const paths = (files || []).map(x => uid + '/' + f.name + '/' + x.name);
+        if (paths.length) await bucket.remove(paths);
+      }
+      const { error: e2 } = await sb.rpc('delete_my_account');
+      if (e2) throw e2;
+      await sb.auth.signOut().catch(() => {});
+      $('f').reset();
+      show('Tu cuenta y todos sus datos se han borrado. Ha sido un placer. Bebe con cabeza.', true);
+    } catch (e) { show(why(e), false); }
+    finally { $('go').disabled = false; }
+  });
+</script>
+</body>
+</html>
